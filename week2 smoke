@@ -1,0 +1,39 @@
+Const int smokePin = A0;
+Const int soilPin = A1;
+
+int smokeValue = 0;
+int soilValue = 0;
+
+Void setup()
+{
+    Serial.begin(9600);
+    Serial.println("Smoke and Soil Moisture
+    Sensor Monitoring");
+}
+
+Void loop()
+{
+    smokeValue = analogRead(smokePin);
+    soilValue = analogRead(soilPin);
+
+    Serial.print("Smoke Value: ");
+    Serial.print(smokeValue);
+
+    Serial.print("Soil Moisture: ");
+    Serial.println(soilValue);
+
+    if (smokeValue > 300)
+    {
+        Serial.println("Smoke Detected!");
+    }
+    else if (soilValue > 600)
+    {
+        Serial.println("Soil is Dry");
+    }
+    else
+    {
+        Serial.println("Environment Normal");
+    }
+
+    delay(1000);
+}

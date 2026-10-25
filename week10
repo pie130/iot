@@ -1,0 +1,41 @@
+1. Amazon RDS — As written in your record
+Aim: To create an Amazon RDS database instance.
+Procedure
+1. Open AWS Management Console.
+2. Open RDS Dashboard.
+3. Select Database Creation Method.
+4. Select Database Engine.
+5. Select a Template.
+6. Enter Database Identification.
+7. Configure Instance.
+8. Configure Storage.
+9. Configure Connectivity.
+10. Additional Configuration.
+11. Review the configuration.
+12. Create the Database.
+13. Get the Database Endpoint.
+14. Verify the Database.
+Cloud RDS structure:
+MySQL Database (Instance)
+          ↓
+    Amazon RDS
+          ↓
+    AWS Cloud
+          ↓
+     Database
+
+
+Simple steps to remember:
+
+AWS → RDS → Create Database → MySQL → Free Tier → Settings → Storage → Connectivity → Create → Available → Endpoint
+
+2. VMware — Visible part of the record
+Aim: To install VMware Workstation and set up a virtual machine.
+
+The second image is partially cut off, so I can only transcribe the visible portion accurately:
+Procedure
+Step 1: Download
+1. Open a browser.
+2. Go to https://www.vmware.com
+3. Download VMware Workstation for Windows.
+Step 2: Create a virtual machine

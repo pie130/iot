@@ -1,0 +1,83 @@
+Aim:
+To create an Amazon EC2 instance, configure a web server, and associate an Elastic IP address with the instance.
+Procedure:
+Step 1: Login to AWS Management Console
+1. Open a browser and go to https://aws.amazon.com
+2. Click Sign In to the Console.
+3. Login using AWS credentials.
+Step 2: Launch an EC2 Instance
+1. In AWS Console, search for EC2.
+2. Click EC2 → Instances → Launch Instance.
+3. Enter Instance Name: Webserver-EC2
+Step 3: Choose Amazon Machine Image (AMI)
+1. Select Amazon Linux 2 AMI (Free tier eligible).
+2. Click Select.
+Step 4: Choose Instance Type
+1. Select t2.micro (Free tier eligible).
+2. Click Next.
+Step 5: Create Key Pair
+1. Click Create new key pair.
+2. Key pair name: webkey
+3. Key type: RSA
+4. Download and save the .pem file.
+5. Click Continue.
+Step 6: Configure Security Group
+1. Create a new security group.
+2. Security group name: webserver
+3. Add rules as shown below:
+Type	Protocol	Port	Source
+SSH	TCP	22	My IP
+HTTP	TCP	80	Anywhere (0.0.0.0/0)
+
+This allows web traffic on port 80.
+
+Step 7: Launch the Instance
+1. Review the settings.
+2. Click Launch Instance.
+3. Wait until the instance state becomes Running.
+Step 8: Associate Public IP Address
+1. EC2 automatically assigns a public IPv4 address.
+2. Copy the public IP or Public DNS.
+Step 9: Connect to EC2 Instance
+1. Select the instance.
+2. Click Connect.
+3. Choose EC2 Instance Connect.
+4. Click Connect.
+Step 10: Install Web Server (Apache)
+
+Run the following commands in the terminal:
+sudo yum update -y
+sudo yum install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+
+Step 11: Create a Sample Web Page
+
+Run:
+cd /var/www/html
+sudo nano index.html
+
+
+Add the following code:
+<html>
+<head>
+    <title>EC2 Web Server</title>
+</head>
+<body>
+    <h1>Welcome to Amazon EC2 Web Server</h1>
+    <p>Web server successfully running on EC2 instance</p>
+</body>
+</html>
+
+
+Save and exit.
+
+Step 12: Access the Web Server
+1. Open a browser.
+2. Enter:
+http://<Public-IP-Address>
+
+
+Example:
+http://13.235.xxx.xxx

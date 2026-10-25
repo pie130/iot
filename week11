@@ -1,0 +1,105 @@
+VMware — Installation of Ubuntu Virtual Machine
+Aim:
+To install and configure Ubuntu operating system using VMware Workstation.
+Procedure:
+Step 1: Download VMware
+1. Open a browser.
+2. Go to VMware website.
+3. Download VMware Workstation for Windows.
+Step 2: Install VMware
+1. Run the downloaded installer.
+2. Follow the installation instructions.
+3. Complete the installation.
+Step 3: Download Ubuntu ISO File
+1. Open browser.
+2. Visit https://ubuntu.com
+3. Download Ubuntu ISO file.
+Step 4: Create a Virtual Machine
+1. Open VMware.
+2. Click Create a New Virtual Machine.
+3. Select Typical (Recommended).
+4. Click Next.
+Step 5: Choose ISO File
+
+Select the ISO image file.
+1. Select Installer disc image file (ISO).
+2. Click Browse.
+3. Select your Ubuntu ISO file.
+4. Click Next.
+Step 6: Enter VM Name
+
+Enter:
+- Virtual machine name: Ubuntu VM
+- Choose a location where you want to save the virtual machine.
+- Example: D:\Virtual Machines\Ubuntu VM
+- Click Next.
+Step 7: Set Hard Disk Size
+
+Enter:
+- Size: 30 GB
+- Store virtual disk as a single file.
+- Click Next.
+Step 8: Configure Hardware
+
+Configure Hardware:
+- CPU: 2 cores
+- Memory: 4 GB
+- Processor: 2 cores
+Click Close.
+
+Step 9: Start the Virtual Machine
+1. Select your VM: Ubuntu-VM.
+2. Click Power on this virtual machine.
+3. Ubuntu will start.
+Step 10: Restart the VM
+
+After installation:
+1. Click Restart Now.
+2. Ubuntu will restart.
+3. Login using the username and password you created.
+Now your virtual machine is ready.
+
+Step 11: Test a Virtual Machine
+1. Open Terminal inside Ubuntu.
+2. Run:
+pwd
+
+
+You should get something similar to:
+/home/student
+
+
+Check the operating system:
+lsb_release -a
+
+
+Check the IP Address:
+ip addr
+
+
+Test Internet:
+ping google.com
+
+
+If you receive responses such as:
+64 bytes from google.com
+
+
+The network is working.
+
+Stop the ping using:
+Ctrl + C
+
+
+Step 12: Install VMware Tools
+
+In Ubuntu Terminal, execute:
+sudo apt update
+
+
+Then:
+sudo apt install open-vm-tools open-vm-tools-desktop -y
+
+
+Restart:
+sudo reboot

@@ -1,0 +1,28 @@
+// IR Sensor pin
+Const int irPin = 2;
+int irValue;
+
+void setup()
+{
+    pinMode(irPin, INPUT);
+
+    Serial.begin(9600);
+    Serial.println("IR Sensor Bluetooth Monitoring Started");
+    Serial.println("HC-05 Connected");
+}
+
+void loop()
+{
+    irValue = digitalRead(irPin);
+
+    if (irValue == LOW)
+    {
+        Serial.println("Object Detected");
+    }
+    else
+    {
+        Serial.println("No Object");
+    }
+
+    delay(1000);
+}

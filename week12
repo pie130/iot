@@ -1,0 +1,51 @@
+Step 1: Configure the Guest OS
+1. Enter the guest OS information.
+2. Full name: Student Name
+3. Username: Student
+4. Password: Enter your password.
+Step 2: Give a Name to the Virtual Machine
+1. Select Virtual Machine location.
+2. Select the location where you want to save the VM.
+Step 3: Allocate Virtual Machine Hardware
+Recommended settings for a student experiment:
+- Memory: 4 GB
+- Processors: 2
+- Hard Disk: 30 GB
+You can increase these values depending on your computer's hardware resources.
+Step 4: Start the Virtual Machine
+1. Select the Virtual Machine.
+2. Click Finish.
+3. Click Power on this virtual machine.
+Then click Install Ubuntu and complete the installation.
+Step 5: Update Ubuntu
+Open Terminal and execute:
+sudo apt update
+sudo apt upgrade -y
+
+
+Step 6: Install VMware Tools
+sudo apt update
+sudo apt install open-vm-tools open-vm-tools-desktop -y
+sudo reboot
+
+
+Step 7: Verify the Virtual Machine
+Check the current directory:
+pwd
+
+
+Check the operating system:
+lsb_release -a
+
+
+Check the IP address:
+ip addr
+
+
+Test the internet connection:
+ping google.com
+
+
+Stop the ping using Ctrl + C.
+Step 8: Verify Installation
+After restarting, verify that Ubuntu is running correctly and the network connection is working.

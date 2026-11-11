@@ -26,3 +26,36 @@ void loop()
 
     delay(1000);
 }
+
+
+
+
+
+#include <SoftwareSerial.h>
+SoftwareSerial Bluetooth(10, 9);
+const int irPin = 2;
+const int ledPin = 13;
+int irValue;
+
+void setup() {
+    pinMode(irPin, INPUT);
+    pinMode(ledPin, OUTPUT);
+    Serial.begin(9600);
+    Bluetooth.begin(9600);
+    Serial.println("IR Sensor Bluetooth Monitoring Started");
+    Serial.println("HC-05 Connected");
+}
+
+void loop() {
+    irValue = digitalRead(irPin);
+    if (irValue == LOW) {
+        digitalWrite(ledPin, HIGH);
+        Serial.println("Object Detected");
+        Bluetooth.println("Object Detected");
+    } else {
+        digitalWrite(ledPin, LOW);
+        Serial.println("No Object");
+        Bluetooth.println("No Object");
+    }
+    delay(500);
+}
